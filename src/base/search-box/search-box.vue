@@ -16,9 +16,14 @@
         default: '搜索歌曲、歌手'
       }
     },
+      /*
+      现状：页面上的某些事件触发频率非常高，数据发生变化时，可能造成成百上千次对处理函数的调用，对于性能的影响是非常大的
+      解决办法：于是，我们可以考虑，每次数据改变时，不要立即执行相关操作，而是等一段时间，以数据不再变化为计时起点，一段时间后再去执行操作。
+      代码：设置一个定时器，在这一小段时间之后再去发送请求，这就稀释了发请求的频率，该函数称为防抖函数
+      */
     created() {
       /* 截流函数用法 */
-      this.$watch('query', debounce((newQuery) => {
+      this.$watch('query', debounce((newQuery) => {                 //
         this.$emit('query',newQuery)
       },200))
     },
@@ -31,9 +36,11 @@
       clear() {
         this.query = ''
       },
+        //在哪里用到这个方法
       setQuery(query){
         this.query = query
       },
+        //在哪里用到这个方法
       inputblur(){
         this.$refs.input.blur()
       }

@@ -11,6 +11,7 @@ function getRandomInt(min, max) {
 export function getRandomList(arr) {
   let _arr = arr.slice()
   for (let i = 0; i < _arr.length; i++) {
+    // j为0-i中得到随机的数，数组下标为i和为j的元素交换
     let j = getRandomInt(0, i)
     let temp = _arr[i]
     _arr[i] = _arr[j]

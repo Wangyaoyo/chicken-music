@@ -2,9 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 /* 子路由使用步骤：导入组件 配置子路由 <router-view>标签 事件中push进去 */
 
-Vue.use(Router)
+Vue.use(Router)                                      //vue的路由
 
-/* 路由懒加载的使用 */
+/*
+*   功能：给组件起一个名字
+*/
 const recommend = ((resolve) => {
   import('components/recommend/recommend').then((module) => {
     resolve(module)
@@ -52,6 +54,9 @@ const TopList = ((resolve) => {
     resolve(module)
   })
 })
+/*
+   功能：根据路径找到相应的组件（映射）
+ */
 export default new Router({
   routes: [
     {

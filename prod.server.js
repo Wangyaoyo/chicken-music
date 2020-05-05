@@ -146,9 +146,9 @@ app.use('/',apiRoutes)
 var port = process.env.PORT || config.build.port
 
 /* Express框架：提供了static中间件来设置静态文件的资源 */
-app.use(express.static('./dist'))
+app.use(express.static('./dist'))                               //express设置静态文件
 /* 起端口 */
-module.exports = app.listen(port, function (err) {                           //express的接口路由
+module.exports = app.listen(port, function (err) {
   if(err){
     console.log(err);
     return

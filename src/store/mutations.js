@@ -1,4 +1,6 @@
-/* 3 定义操作 */
+/*
+    3.功能：更改状态的逻辑，同步操作
+ */
 import * as types from './mutation-types'
 
 const mutations = {

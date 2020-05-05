@@ -3,6 +3,9 @@ import {playMode} from "common/js/config";
 import {getRandomList} from "common/js/util";
 import {saveSearch, deleteSearch, clearSearch, addPlayHistory, addFavorite, removeFavorite} from "common/js/cache";
 
+/*
+  功能：提交mutation，异步操作
+ */
 function getIndex(list, song) {
   return list.findIndex((item) => {
     return item.id === song.id

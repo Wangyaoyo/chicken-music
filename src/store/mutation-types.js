@@ -1,4 +1,6 @@
-/* 2 定义mutation-types */
+/*
+*     2.定义修改对数据的操作的一些类型
+ */
 export const SET_SINGER = 'SET_SINGER'
 export const SET_PLAYING = 'SET_PLAYING'
 export const SET_FULLSCREEN = 'SET_FULLSCREEN'

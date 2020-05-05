@@ -42,7 +42,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
             host: 'c.y.qq.com'
           },
@@ -57,8 +56,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       apiRoutes.post('/api/getPurlUrl',bodyParser.json(),function (req,res) {
         const url = 'http://u.y.qq.com/cgi-bin/musicu.fcg'
         axios.post(url,req.body,{
+          //http的请求头
           headers:{
+            //包含一个url:表示请求的来源，也可以为空，设置是为了防止恶意请求
             referer:'https://y.qq.com',
+            //指定来源服务器的域名
             origin:'https://y.qq.com',
             'Content-type':'application/x-www-form-urlencoded'
           }
@@ -73,8 +75,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
+            /* 指定被请求服务器的域名 */
             host: 'c.y.qq.com'
           },
           params: req.query
@@ -89,7 +91,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
             host: 'c.y.qq.com'
           },
@@ -105,7 +106,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
             host: 'c.y.qq.com'
           },
@@ -122,7 +122,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
             host: 'c.y.qq.com'
           },
@@ -138,7 +137,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
             host: 'c.y.qq.com'
           },
@@ -154,7 +152,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         const url = 'https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp'
         axios.get(url, {
           headers: {
-            /* 根据访问的网址限制做的一种伪装 */
             referer: 'https://c.y.qq.com/',
             host: 'c.y.qq.com'
           },

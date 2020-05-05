@@ -20,7 +20,9 @@
       }
     },
     methods: {
+      //  点击后触发selectItem方法
       selectItem(index) {
+        //  子组件通过$emit向父组件传递信息，父组件通过@select捕捉
         this.$emit('select', index)
       }
     }

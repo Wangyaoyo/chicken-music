@@ -5,6 +5,7 @@
         <i class="icon-back"></i>
       </div>
       <div class="switches-wrapper">
+        <!--：子组件变量=父组件传的值 -->
         <switches :switches="switches" :currentIndex="currentIndex" @select="selectSwitch"></switches>
       </div>
       <div class="play-btn" @click="randomPlay">
@@ -72,6 +73,7 @@
       }
     },
     methods:{
+      //  index是子组件通过$emit传递的数据
       selectSwitch(index){
         this.currentIndex = index
       },

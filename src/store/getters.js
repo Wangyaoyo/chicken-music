@@ -1,4 +1,6 @@
-/* 4 再次封装一层，使用getters 获取 */
+/*
+    4.功能：定义获取数据的方法
+ */
 import state from "./state";
 
 export const singer = state => state.singer
