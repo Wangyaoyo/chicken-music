@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "ajv": "^6.6.1",
+    "ajv": "^6.12.3",
     "axios": "^0.16.1",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.0.0",
